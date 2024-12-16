@@ -8,7 +8,7 @@ function PaymentSuccess() {
   const [loading, setIsLoading] = useState(true);
   const [orderResponse, setOrderResponse] = useState([]);
   const [order, setOrder] = useState([]);
-  const sendEmail = () => {
+  const sendEmail = (e) => {
     e.preventDefault();
     emailjs.sendForm(
       "service_yl732z7",
@@ -16,6 +16,11 @@ function PaymentSuccess() {
       "TPvYybSONPlOrsbJf",
       {
         message: `${order}`,
+      }
+      ).then(response => {
+        console.log("Email sent successfully", response.status, response.text);
+      }).catch(error => {
+        console.error("Error sending email", error);
       }
     );
   };

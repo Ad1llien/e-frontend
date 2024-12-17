@@ -286,22 +286,23 @@ function Cart() {
                                                         </p>
                                                     </div>
                                                     <div className="col-md-2 mb-4 mb-md-0">
-                                                        <div className="d-flex justify-content-center align-items-center">
-                                                            <div className="form-outline">
+                                                        <div className="d-flex flex-column align-items-center">
+                                                            <div className="form-outline mb-2">
                                                                 <input
                                                                     type="number"
                                                                     id={`qtyInput-${c.product.id}`}
-                                                                    className="form-control"
+                                                                    className="form-control form-control-sm"
                                                                     onChange={(e) => handleQtyChange(e, c.product.id)}
                                                                     value={productQuantities[c.product.id] || c.qty}
                                                                     min={1}
-
                                                                 />
                                                             </div>
-                                                            <button onClick={() => UpdateCart(cart_id, c.id, c.product.id, c.product.price, c.product.shipping_amount, c.color, c.size)} className='ms-2 btn btn-primary'><i className='fas fa-rotate-right'></i></button>
+                                                            <h5 className="text-center">
+                                                                <span className="align-middle">${c.sub_total}</span>
+                                                            </h5>
                                                         </div>
-                                                        <h5 className="mb-2 mt-3 text-center"><span className="align-middle">${c.sub_total}</span></h5>
                                                     </div>
+
                                                 </div>
                                             ))}
 

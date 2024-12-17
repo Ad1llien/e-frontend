@@ -9,29 +9,79 @@ const Logout = () => {
         logout();
     }, []);
     return (
-        <>
-            <section>
-                <main className="" style={{ marginBottom: 400, marginTop: 150 }}>
-                    <div className="container">
-                        <section className="">
-                            <div className="row d-flex justify-content-center">
-                                <div className="col-xl-5 col-md-8">
-                                    <div className="card rounded-5">
-                                        <div className="card-body p-4">
-                                            <h3 className="text-center">You have been logged out</h3>
-                                            <div className="d-flex justify-content-center" >
-                                                <Link to="/login" className='btn btn-primary me-2'>Login <i className='fas fa-sign-in-alt'></i> </Link>
-                                                <Link to="/login" className='btn btn-primary'>Register <i className='fas fa-user-plus'></i> </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </main>
-            </section>
-        </>
+        <div
+            style={{
+                background: '#1A1A2E',
+                minHeight: '100vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: '#FFF',
+                fontFamily: 'Arial, sans-serif',
+            }}
+        >
+            <div
+                style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    padding: '3rem',
+                    borderRadius: '15px',
+                    boxShadow: '0 4px 20px rgba(255, 255, 255, 0.3)',
+                    backdropFilter: 'blur(8px)',
+                    width: '100%',
+                    maxWidth: '500px',  // Енін ұлғайту
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                }}
+            >
+                <h3
+                    style={{
+                        textAlign: 'center',
+                        marginBottom: '1.5rem',
+                        color: '#C6C6E4',
+                        fontSize: '2rem',  // Шрифт өлшемін ұлғайту
+                        fontWeight: 'bold',
+                    }}
+                >
+                    You have been logged out
+                </h3>
+                <div className="d-flex justify-content-center" style={{ marginTop: '2rem' }}>
+                    <Link
+                        to="/login"
+                        className="btn"
+                        style={{
+                            background: 'linear-gradient(90deg, #9F7AEA, #6A5ACD)',
+                            color: '#FFF',
+                            padding: '1rem 2rem', // Кнопканың өлшемін үлкейту
+                            borderRadius: '8px',
+                            fontWeight: 'bold',
+                            marginRight: '20px', // Екеуінің арақашықтығын ұлғайту
+                            textDecoration: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        Login <i className="fas fa-sign-in-alt" style={{ marginLeft: '0.5rem' }} />
+                    </Link>
+                    <Link
+                        to="/register"
+                        className="btn"
+                        style={{
+                            background: 'linear-gradient(90deg, #9F7AEA, #6A5ACD)',
+                            color: '#FFF',
+                            padding: '1rem 2rem', // Кнопканың өлшемін үлкейту
+                            borderRadius: '8px',
+                            fontWeight: 'bold',
+                            textDecoration: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        Register <i className="fas fa-user-plus" style={{ marginLeft: '0.5rem' }} />
+                    </Link>
+                </div>
+            </div>
+        </div>
     );
 };
 

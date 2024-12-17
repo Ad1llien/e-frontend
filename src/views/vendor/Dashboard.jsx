@@ -168,32 +168,8 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          {/*/row*/}
-          <hr />
-          <div className="row mb-1 mt-4">
-            <div className="col">
-              <h4>Chart Analytics</h4>
-            </div>
-          </div>
-          <Link className='btn btn-primary me-2'>Daily Report</Link>
-          <Link className='btn btn-primary me-2'>Monthly Report</Link>
-          <Link className='btn btn-primary me-2'>Yearly Report</Link>
-          <div className="row my-2">
-            <div className="col-lg-6 ">
-              <div className="card">
-                <div className="card-body" >
-                  <Line data={order_data} style={{ height: 300, minWidth: "630px" }} />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="card">
-                <div className="card-body" >
-                  <Line data={product_data} style={{ height: 300, minWidth: "630px" }} />
-                </div>
-              </div>
-            </div>
-          </div>
+          {/*/row*/}            
+          
           <a id="layouts" />
           <div className="mb-3 mt-5" style={{ marginBottom: 300 }}>
             <nav className='mb-5'>

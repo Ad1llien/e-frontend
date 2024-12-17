@@ -35,7 +35,7 @@ function Invoice() {
                                             <img
                                                 className="img-responsive"
                                                 alt="iamgurdeeposahan"
-                                                src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg"
+                                                src= "/src/views/base/logo.png"
                                                 style={{ width: 71, borderRadius: 43 }}
                                             />
                                         </div>
@@ -43,16 +43,16 @@ function Invoice() {
                                     <div className="col-xs-12 col-sm-12 col-md-12 text-left">
                                         <div className="receipt-right">
                                             <h5 className="margin-top-10">
-                                                Desphixs<span className="text-warning">.</span>
+                                                Store Buy<span className="text-warning">.</span>
                                             </h5>
                                             <p>
-                                                <i className="fa fa-phone" /> +1 3649-6589
+                                                <i className="fa fa-phone" /> +7 705 885 6886
                                             </p>
                                             <p>
-                                                <i className="fa fa-envelope" /> company@gmail.com
+                                                <i className="fa fa-envelope" /> akadilzh2004kz@gmail.com
                                             </p>
                                             <p>
-                                                <i className="fa fa-location-arrow" /> 123 Main Street
+                                                <i className="fa fa-location-arrow" /> Abylaikhan 1/1
                                             </p>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@ function Invoice() {
                                                 ${order?.price}
                                             </td>
                                             <td className="col-md-2">
-                                                ${order?.qty}
+                                                {order?.qty}
                                             </td>
                                             <td className="col-md-2">
                                                 ${order?.sub_total}

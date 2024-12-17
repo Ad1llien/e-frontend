@@ -352,7 +352,8 @@ function ProductDetail() {
                                                     <div></div>
                                                 )}
                                             </div>
-                                            <button onClick={handleAddToCart} type="button" className="btn btn-primary btn-rounded me-2 add-to-cart" >
+                                            <button onClick={handleAddToCart} type="button" className="btn btn-primary btn-rounded me-2 add-to-cart"  style={{ backgroundColor: '#6f42c1'  
+                                                            }}>
                                                 {isAddingToCart === "Add To Cart" &&
                                                     <i className="fas fa-cart-plus me-2" />
                                                 }
@@ -372,7 +373,9 @@ function ProductDetail() {
                                                 {isAddingToCart}
                                             </button>
                                             {wishlistLoading === true &&
-                                                <button onClick={handleAddToWishlist} className="btn btn-danger btn-floating" data-mdb-toggle="tooltip" title="Add to wishlist" >
+                                                <button onClick={handleAddToWishlist} className="btn btn-danger btn-floating" data-mdb-toggle="tooltip" title="Add to wishlist"   style={{ backgroundColor: 'red', 
+                                                                
+                                                }}>
                                                     <i className="fas fa-heart" />
                                                 </button>
                                             }
@@ -389,8 +392,8 @@ function ProductDetail() {
                         </section>
                         {/* Section: Product details */}
                         <hr />
-                        <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                            <li className="nav-item" role="presentation">
+                        <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist" >
+                            <li className="nav-item" role="presentation" >
                                 <button
                                     className="nav-link active"
                                     id="pills-home-tab"
@@ -428,24 +431,13 @@ function ProductDetail() {
                                     role="tab"
                                     aria-controls="pills-contact"
                                     aria-selected="false"
+                                    
+                                    
                                 >
                                     Review
                                 </button>
                             </li>
-                            {/* <li className="nav-item" role="presentation">
-                                <button
-                                    className="nav-link"
-                                    id="pills-disabled-tab"
-                                    data-bs-toggle="pill"
-                                    data-bs-target="#pills-disabled"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="pills-disabled"
-                                    aria-selected="false"
-                                >
-                                    Question &amp; Answer
-                                </button>
-                            </li> */}
+                          
                         </ul>
                         <div className="tab-content" id="pills-tabContent">
                             <div
@@ -490,28 +482,7 @@ function ProductDetail() {
                                             <div className="card-body">
                                                 <h5 className="card-title">{vendor?.name}</h5>
                                                 <p className="card-text">{vendor?.description}</p>
-                                                {/* <div className="d-flex mb-2">
-                                                    <ul className="list-inline m-0">
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star text-primary" />
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star text-primary" />
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star text-primary" />
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star text-primary" />
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star-half-alt text-primary" />
-                                                        </li>
-                                                    </ul>
-                                                    <span className="ms-2">4.5</span>
-                                                </div> */}
-                                                {/* <button className="btn btn-primary me-2">Follow</button>
-                                                <button className="btn btn-secondary">Send Message</button> */}
+                                             
                                             </div>
                                         </div>
                                     </div>
@@ -534,7 +505,7 @@ function ProductDetail() {
                                                     <label htmlFor="username" className="form-label">
                                                         Rating
                                                     </label>
-                                                    <select onChange={handleReviewChange} name="rating" className='form-select' id="">
+                                                    <select onChange={handleReviewChange} name="rating" className='form-select' id="" >
                                                         <option value="1">★</option>
                                                         <option value="2">★★</option>
                                                         <option value="3">★★★</option>
@@ -543,7 +514,7 @@ function ProductDetail() {
                                                     </select>
                                                 </div>
                                                 <div className="mb-3">
-                                                    <label htmlFor="reviewText" className="form-label">
+                                                    <label htmlFor="reviewText" className="form-label"  >
                                                         Review
                                                     </label>
                                                     <textarea
@@ -555,7 +526,7 @@ function ProductDetail() {
                                                         value={createReview.review}
                                                     />
                                                 </div>
-                                                <button type="submit" className="btn btn-primary">
+                                                <button type="submit" className="btn btn-primary"  style={{ backgroundColor: "#6f42c1" }}>
                                                     Submit Review
                                                 </button>
                                             </form>

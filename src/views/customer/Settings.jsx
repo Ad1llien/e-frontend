@@ -109,75 +109,57 @@ function Settings() {
                             <Sidebar />
                             <div className="col-lg-9 mt-1">
                                 <section className="">
-                                    <main className="mb-5" style={{}}>
+                                    <main className="mb-5">
                                         <div className="container px-4">
-                                            {/* Section: Summary */}
+                                            {/* Section: Settings */}
                                             <section className="">
-                                                <h3 className="mb-3">
-                                                    {" "}
-                                                    <i className="fas fa-gear fa-spin" /> Settings{" "}
+                                                <h3 className="mb-3" style={{ color: "#3F51B5" }}>
+                                                    Settings
                                                 </h3>
                                                 <form onSubmit={handleFormSubmit} method='POST' encType="multipart/form-data">
                                                     <div className="row">
                                                         <div className="col-lg-12 mb-4">
-                                                            <label
-                                                                htmlFor="exampleInputEmail1"
-                                                                className="form-label"
-                                                            >
+                                                            <label htmlFor="profileImage" className="form-label" style={{ color: "#3F51B5" }}>
                                                                 Profile Image
                                                             </label>
                                                             <input
                                                                 type="file"
                                                                 className="form-control"
-                                                                aria-describedby="emailHelp"
                                                                 onChange={handleFileChange}
                                                                 name='p_image'
                                                             />
                                                         </div>
                                                         <div className="col-lg-12">
-                                                            <label
-                                                                htmlFor="exampleInputEmail1"
-                                                                className="form-label"
-                                                            >
+                                                            <label htmlFor="fullName" className="form-label" style={{ color: "#3F51B5" }}>
                                                                 Full Name
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                aria-describedby="emailHelp"
                                                                 value={profileData?.full_name}
                                                                 onChange={handleInputChange}
                                                                 name='full_name'
-
                                                             />
                                                         </div>
                                                         <div className="col-lg-6 mt-3">
-                                                            <label
-                                                                htmlFor="exampleInputEmail1"
-                                                                className="form-label"
-                                                            >
+                                                            <label htmlFor="email" className="form-label" style={{ color: "#3F51B5" }}>
                                                                 Email address
                                                             </label>
                                                             <input
                                                                 type="email"
                                                                 className="form-control"
-                                                                aria-describedby="emailHelp"
                                                                 value={profileData?.email}
                                                                 name='email'
                                                                 readOnly
                                                             />
                                                         </div>
                                                         <div className="col-lg-6 mt-3">
-                                                            <label
-                                                                htmlFor="exampleInputEmail1"
-                                                                className="form-label"
-                                                            >
+                                                            <label htmlFor="phone" className="form-label" style={{ color: "#3F51B5" }}>
                                                                 Mobile
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                aria-describedby="emailHelp"
                                                                 value={profileData?.phone}
                                                                 name='phone'
                                                                 readOnly
@@ -187,10 +169,7 @@ function Settings() {
                                                     <br />
                                                     <div className="row">
                                                         <div className="col-lg-6 mt-3">
-                                                            <label
-                                                                htmlFor="exampleInputEmail1"
-                                                                className="form-label"
-                                                            >
+                                                            <label htmlFor="address" className="form-label" style={{ color: "#3F51B5" }}>
                                                                 Address
                                                             </label>
                                                             <input
@@ -198,92 +177,70 @@ function Settings() {
                                                                 value={profileData?.address}
                                                                 type="text"
                                                                 className="form-control"
-                                                                aria-describedby="emailHelp"
                                                                 onChange={handleInputChange}
-
                                                             />
                                                         </div>
                                                         <div className="col-lg-6 mt-3">
-                                                            <label
-                                                                htmlFor="exampleInputEmail1"
-                                                                className="form-label"
-                                                            >
+                                                            <label htmlFor="city" className="form-label" style={{ color: "#3F51B5" }}>
                                                                 City
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                aria-describedby="emailHelp"
                                                                 value={profileData?.city}
                                                                 name='city'
                                                                 onChange={handleInputChange}
-
                                                             />
                                                         </div>
                                                         <div className="col-lg-6 mt-3">
-                                                            <label
-                                                                htmlFor="exampleInputEmail1"
-                                                                className="form-label"
-                                                            >
+                                                            <label htmlFor="state" className="form-label" style={{ color: "#3F51B5" }}>
                                                                 State
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                aria-describedby="emailHelp"
                                                                 value={profileData?.state}
                                                                 name='state'
                                                                 onChange={handleInputChange}
-
                                                             />
                                                         </div>
                                                         <div className="col-lg-6 mt-3">
-                                                            <label
-                                                                htmlFor="exampleInputEmail1"
-                                                                className="form-label"
-                                                            >
+                                                            <label htmlFor="country" className="form-label" style={{ color: "#3F51B5" }}>
                                                                 Country
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                aria-describedby="emailHelp"
                                                                 value={profileData?.country}
                                                                 name='country'
                                                                 onChange={handleInputChange}
-
                                                             />
                                                         </div>
                                                     </div>
+                                                    <br />
                                                     {loading === false &&
-                                                        <button type="submit" className="btn btn-primary mt-5">
+                                                        <button type="submit" className="btn btn-primary mt-5" style={{ backgroundColor: "#3F51B5", borderColor: "#3F51B5" }}>
                                                             Save Changes
                                                         </button>
                                                     }
 
                                                     {loading === true &&
-                                                        <button disabled className="btn btn-primary mt-5">
+                                                        <button disabled className="btn btn-primary mt-5" style={{ backgroundColor: "#3F51B5", borderColor: "#3F51B5" }}>
                                                             Saving... <i className='fas fa-spinner fa-spin'></i>
                                                         </button>
                                                     }
                                                 </form>
                                             </section>
-                                            {/* Section: Summary */}
-                                            {/* Section: MSC */}
-                                            {/* Section: MSC */}
                                         </div>
-                                        {/* Container for demo purpose */}
                                     </main>
                                 </section>
                             </div>
                         </div>
                     </section>
-                    {/*Section: Wishlist*/}
                 </div>
             </main>
-
         </div>
-    )
+    );
 }
 
 export default Settings

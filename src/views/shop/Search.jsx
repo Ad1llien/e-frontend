@@ -162,7 +162,12 @@ function Search() {
                             <section className="text-center container">
                                 <div className="row mt-4 mb-3">
                                     <div className="col-lg-6 col-md-8 mx-auto">
-                                        <h1 className="fw-light">Search: "{query}"</h1>
+                                        <h1 className="fw-light"  style={{ 
+                                                               color: '#6A5ACD', 
+                                                               fontFamily: 'Verdana, sans-serif', 
+                                                               fontWeight: '1200', 
+                                                               fontSize: '1.5rem',
+                                                               letterSpacing: '2px', }}>Search: "{query}"</h1>
                                     </div>
                                 </div>
                             </section>
@@ -185,8 +190,8 @@ function Search() {
                                                 </div>
                                                 <div className="card-body">
 
-                                                    <h6 className="">By: <Link to={`/vendor/${product?.vendor?.slug}`}>{product.vendor.name}</Link></h6>
-                                                    <Link to={`/detail/${product.slug}`} className="text-reset"><h5 className="card-title mb-3 ">{product.title.slice(0, 30)}...</h5></Link>
+                                                    <h6 className="">By: <Link to={`/vendor/${product?.vendor?.slug}`}  style={{ textDecoration:'none'   }}  >{product.vendor.name}</Link></h6>
+                                                    <Link to={`/detail/${product.slug}`} className="text-reset"  style={{ textDecoration:'none'   }}  ><h5 className="card-title mb-3 ">{product.title.slice(0, 30)}...</h5></Link>
                                                     <Link to="/" className="text-reset"><p>{product?.brand.title}</p></Link>
                                                     <h6 className="mb-1">${product.price}</h6>
 
@@ -290,6 +295,8 @@ function Search() {
                                                             disabled={loadingStates[product.id] === 'Adding...'}
                                                             type="button"
                                                             className="btn btn-primary me-1 mb-1"
+                                                            style={{ backgroundColor: '#6f42c1'  
+                                                            }}
                                                         >
                                                             {loadingStates[product.id] === 'Added to Cart' ? (
                                                                 <>
@@ -313,6 +320,9 @@ function Search() {
                                                         onClick={() => handleAddToWishlist(product.id)}
                                                         type="button"
                                                         className="btn btn-danger px-3 ms-2 "
+                                                        style={{ backgroundColor: 'red', 
+                                                                
+                                                        }}
                                                     >
                                                         <i className="fas fa-heart" />
                                                     </button>

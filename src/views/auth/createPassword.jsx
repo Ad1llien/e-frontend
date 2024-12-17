@@ -1,35 +1,31 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import apiInstance from '../../utils/axios';
-import Swal from 'sweetalert2'
-
+import Swal from 'sweetalert2';
 
 function CreatePassword() {
-    const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
-    const [error, setError] = useState(null)
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [error, setError] = useState(null);
 
-    const axios = apiInstance
-    const navigate = useNavigate()
+    const axios = apiInstance;
+    const navigate = useNavigate();
 
     const [searchParams] = useSearchParams();
     const otp = searchParams.get('otp');
     const uidb64 = searchParams.get('uidb64');
     const reset_token = searchParams.get('reset_token');
 
-
-
-
     const handleNewPasswordChange = (event) => {
-        setPassword(event.target.value)
-    }
+        setPassword(event.target.value);
+    };
 
     const handleNewPasswordConfirmChange = (event) => {
-        setConfirmPassword(event.target.value)
-    }
+        setConfirmPassword(event.target.value);
+    };
 
     const handlePasswordSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         if (password !== confirmPassword) {
             setError(true);
@@ -42,12 +38,12 @@ function CreatePassword() {
             console.log("reset_token ======", reset_token);
             console.log("password ======", password);
 
-            const formdata = new FormData()
+            const formdata = new FormData();
 
-            formdata.append("otp", otp)
-            formdata.append("uidb64", uidb64)
-            formdata.append("reset_token", reset_token)
-            formdata.append("password", password)
+            formdata.append("otp", otp);
+            formdata.append("uidb64", uidb64);
+            formdata.append("reset_token", reset_token);
+            formdata.append("password", password);
 
             try {
                 axios.post(`user/password-change/`, formdata).then((res) => {
@@ -55,33 +51,30 @@ function CreatePassword() {
                     Swal.fire({
                         icon: 'success',
                         title: 'Password Changed Successfully',
-                    })
-                    navigate("/login")
-                })
+                    });
+                    navigate("/login");
+                });
             } catch (error) {
                 Swal.fire({
                     icon: 'error',
-                    title: 'An Error Occured Try Again',
-                })
-                // console.log(error);
+                    title: 'An Error Occurred. Try Again.',
+                });
             }
         }
+    };
 
-
-    }
     return (
         <section>
             <main className="" style={{ marginBottom: 100, marginTop: 50 }}>
                 <div className="container">
-                    {/* Section: Login form */}
-                    <section className="">
+                    {/* Section: Password Reset Form */}
+                    <section>
                         <div className="row d-flex justify-content-center">
                             <div className="col-xl-5 col-md-8">
                                 <div className="card rounded-5">
                                     <div className="card-body p-4">
                                         <h3 className="text-center">Create New Password</h3>
                                         <br />
-
                                         <div className="tab-content">
                                             <div
                                                 className="tab-pane fade show active"
@@ -90,49 +83,75 @@ function CreatePassword() {
                                                 aria-labelledby="tab-login"
                                             >
                                                 <form onSubmit={handlePasswordSubmit}>
-                                                    {/* Email input */}
+                                                    {/* New Password Input */}
                                                     <div className="form-outline mb-4">
-                                                        <label className="form-label" htmlFor="Full Name">
+                                                        <label className="form-label" htmlFor="password">
                                                             Enter New Password
                                                         </label>
                                                         <input
                                                             type="password"
-                                                            id="email"
+                                                            id="password"
                                                             required
                                                             name="password"
                                                             className="form-control"
                                                             onChange={handleNewPasswordChange}
+                                                            style={{
+                                                                padding: '1rem',
+                                                                borderRadius: '8px',
+                                                                backgroundColor: 'rgba(46, 39, 39, 0.1)',
+                                                                color: '#FFF',
+                                                            }}
                                                         />
                                                     </div>
 
+                                                    {/* Confirm New Password Input */}
                                                     <div className="form-outline mb-4">
-                                                        <label className="form-label" htmlFor="Full Name">
+                                                        <label className="form-label" htmlFor="confirmPassword">
                                                             Confirm New Password
                                                         </label>
                                                         <input
                                                             type="password"
-                                                            id="email"
+                                                            id="confirmPassword"
                                                             required
                                                             name="confirmPassword"
                                                             className="form-control"
                                                             onChange={handleNewPasswordConfirmChange}
+                                                            style={{
+                                                                padding: '1rem',
+                                                                borderRadius: '8px',
+                                                                backgroundColor: 'rgba(46, 39, 39, 0.1)',
+                                                                color: '#FFF',
+                                                            }}
                                                         />
-                                                        {error !== null &&
+                                                        {error !== null && (
                                                             <>
-                                                                {error === true
-
-                                                                    ? <p className='text-danger fw-bold mt-2'>Password Does Not Match</p>
-                                                                    : <p className='text-success fw-bold mt-2'>Password Matched</p>
-                                                                }
+                                                                {error === true ? (
+                                                                    <p className='text-danger fw-bold mt-2'>Password Does Not Match</p>
+                                                                ) : (
+                                                                    <p className='text-success fw-bold mt-2'>Password Matched</p>
+                                                                )}
                                                             </>
-                                                        }
+                                                        )}
                                                     </div>
 
-
+                                                    {/* Submit Button */}
                                                     <div className="text-center">
-                                                        <button type='submit' className='btn btn-primary w-100'>Reset Password</button>
+                                                        <button
+                                                            type="submit"
+                                                            className="btn w-100"
+                                                            style={{
+                                                                padding: '1rem',
+                                                                fontWeight: 'bold',
+                                                                borderRadius: '8px',
+                                                                background: 'linear-gradient(90deg, #9F7AEA, #6A5ACD)',
+                                                                color: '#FFF',
+                                                                border: 'none',
+                                                                transition: 'background 0.3s ease',
+                                                            }}
+                                                        >
+                                                            Reset Password
+                                                        </button>
                                                     </div>
-
                                                 </form>
                                             </div>
                                         </div>
@@ -144,7 +163,7 @@ function CreatePassword() {
                 </div>
             </main>
         </section>
-    )
+    );
 }
 
-export default CreatePassword
+export default CreatePassword;
